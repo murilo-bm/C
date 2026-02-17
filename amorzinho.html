@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pra você ❤️</title>
+
+    <style>
+        body {
+            background: #c73461;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Patrick Hand', cursive;
+
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+        }
+
+        .cat {
+            width: 180px;
+            margin-bottom: 10px;
+        }
+
+        /* Envelope */
+        .envelope {
+            width: 160px;
+            height: 105px;
+            background: white;
+            border-radius: 14px;
+            position: relative;
+            margin: auto;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+            transition: 0.6s ease;
+        }
+
+        .envelope::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 80px solid transparent;
+            border-right: 80px solid transparent;
+            border-top: 50px solid #ffc1d6;
+            top: 0;
+            left: 0;
+        }
+
+        .envelope::after {
+            content: "❤️";
+            position: absolute;
+            font-size: 20px;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Carta aberta */
+        .letter {
+            background: white;
+            width: 85%;
+            max-width: 260px;
+            padding: 16px;
+            border-radius: 16px;
+            margin: auto;
+            margin-top: -70px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.6s ease;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+            color: #c2185b;
+            font-size: 16px;
+        }
+
+        /* Ao clicar */
+        .open .envelope {
+            transform: rotateX(150deg);
+            opacity: 0;
+        }
+
+        .open .letter {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" onclick="abrirCarta()">
+
+        <img src="Gato Fofo.png" class="cat">
+
+        <div class="envelope"></div>
+
+        <div class="letter">
+            Oi meu amor ❤️<br><br>
+            Gostaria que você soubesse que<br> <b>TE AMO MUITÃO!!!</b>
+        </div>
+
+    </div>
+
+    <script>
+        function abrirCarta() {
+            document.querySelector(".container").classList.toggle("open");
+        }
+    </script>
+
+</body>
+
+</html>
